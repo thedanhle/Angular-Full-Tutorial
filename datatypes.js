@@ -1,0 +1,14 @@
+"use strict";
+let lname;
+lname = "hello";
+let newname = lname.toUpperCase();
+console.log(newname);
+let age;
+age = 50;
+console.log(age);
+let empList;
+empList = ["yo"];
+let depList;
+depList = [1, 3, 6, 1, 4];
+let result = depList.filter((num) => num > 2);
+console.log(result);
