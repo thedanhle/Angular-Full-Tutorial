@@ -7,3 +7,7 @@ p{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
 }
+
+.wrapper{
+    background-color: rgb(255, 199, 95);
+}
