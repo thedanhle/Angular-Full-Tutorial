@@ -13,4 +13,16 @@ export class ProductsComponent {
     {id:1, name: 'Nintendo Switch', price: '$349.99', color: 'Black', available: 'Not Available', image: '/assets/products/nintendoSwitch.jpg'},
     {id:1, name: 'Beats by Dre', price: '$99.99', color: 'Cream', available: 'Available', image: '/assets/products/beatsByDre.jpg'}
   ];
+
+  getNumAllProducts(){
+    return this.products.length;
+  }
+
+  getNumAvailableProducts(){
+    return this.products.filter(product => product.available === 'Available').length;
+  }
+
+  getNumOutOfStockProducts(){
+    return this.products.filter(product => product.available === "Not Available").length;
+  }
 }
