@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class ProductsComponent {
 
   productCountRadioButton: string = 'All';
+  searchText: string = '';
 
   products = [
     {id:1, name: 'Analog Watch', price: '$109.99', color: 'Silver', available: 'Available', image: '/assets/products/AnalogWatch.jpg'},
@@ -31,6 +32,22 @@ export class ProductsComponent {
 
   onFilterRadioButtonChanged(selected: string){
     this.productCountRadioButton = selected;
-    console.log(this.productCountRadioButton);
+    // console.log(this.productCountRadioButton);
+  }
+
+  onSearchTextEntered(searchValue: string){
+    this.searchText = searchValue;
+    // console.log(this.searchText);
+  }
+
+  existsInProducts(text: any){
+    let exists = false;
+    let product = text.toLowerCase();
+    let input = this.searchText.toLowerCase();
+    if(product.includes(input)){
+      exists = true;
+    }
+
+    return exists;
   }
 }
