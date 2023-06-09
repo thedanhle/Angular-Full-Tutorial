@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
+
+  productCountRadioButton: string = 'All';
+
   products = [
     {id:1, name: 'Analog Watch', price: '$109.99', color: 'Silver', available: 'Available', image: '/assets/products/AnalogWatch.jpg'},
     {id:1, name: 'LG Washing Machine', price: '$499.99', color: 'White', available: 'Not Available', image: '/assets/products/WashingMachine.jpg'},
@@ -24,5 +27,10 @@ export class ProductsComponent {
 
   getNumOutOfStockProducts(){
     return this.products.filter(product => product.available === "Not Available").length;
+  }
+
+  onFilterRadioButtonChanged(selected: string){
+    this.productCountRadioButton = selected;
+    console.log(this.productCountRadioButton);
   }
 }
